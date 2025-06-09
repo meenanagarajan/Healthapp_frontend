@@ -48,7 +48,6 @@ useEffect(() => {
   }, []);
   
 
-if (loading) return <div>Loading drinks data...</div>;
 if (error) return <div>Error: {error}</div>;
 
 
