@@ -10,15 +10,15 @@ const icons = [
 ];
 
 const motivationOptions = [
-  "Improve health and Wellness",
+  "Improve Health and Wellness",
   "Slow Down Effects of Aging",
   "Lose Weight and Improve Fitness",
   "Improve Sleep Quality",
   "Avoid Hangovers",
   "Stop Blacking or Graying Out",
   "Save Money",
-  "Find healthier Coping Strategies",
-  "Reduce Stress and Anxietyy",
+  "Find Healthier Coping Strategies",
+  "Reduce Stress and Anxiety",
   "Improve Relationships",
 ];
 
