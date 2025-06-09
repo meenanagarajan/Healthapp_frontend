@@ -10,20 +10,19 @@ const icons = [
 ];
 
 const motivationOptions = [
-  "Improve Health and Wellness",
+  "Improve health and Wellness",
   "Slow Down Effects of Aging",
   "Lose Weight and Improve Fitness",
   "Improve Sleep Quality",
   "Avoid Hangovers",
   "Stop Blacking or Graying Out",
   "Save Money",
-  "Find Healthier Coping Strategies",
-  "Reduce Stress and Anxiety",
+  "Find healthier Coping Strategies",
+  "Reduce Stress and Anxietyy",
   "Improve Relationships",
 ];
 
 export default function GoalsPage1({ onBack, onNext, selected, setSelected }) {
-  const currentStepIndex = 0;
   const [loading, setLoading] = useState(false);
 
   const toggleSelect = (option) => {
@@ -62,8 +61,8 @@ export default function GoalsPage1({ onBack, onNext, selected, setSelected }) {
 
   return (
     <div className="min-h-screen bg-blue-100 flex flex-col items-center">
-      {/* Header in blue */}
-      <div className="w-full bg-blue-100 py-4 px-6 flex items-center justify-between max-w-5xl">
+      {/* Header */}
+      <div className="w-full bg-blue-100 py-4 px-4 sm:px-6 flex items-center justify-between max-w-5xl">
         <button
           onClick={onBack}
           className="p-2 hover:bg-blue-200 rounded"
@@ -71,39 +70,44 @@ export default function GoalsPage1({ onBack, onNext, selected, setSelected }) {
         >
           <ArrowLeft />
         </button>
-        <h1 className="text-xl font-bold text-center flex-1">Your Goals</h1>
+        <h1 className="text-lg sm:text-xl font-bold text-center flex-1">
+          Your Goals
+        </h1>
         <div style={{ width: 40 }} />
       </div>
 
       {/* White Card */}
-      <div className="bg-white w-1/2 mt-6 rounded-xl shadow-md p-6">
+      <div className="bg-white w-full max-w-xl mt-6 rounded-xl shadow-md p-4 sm:p-6 mx-4">
         {/* Progress Icons */}
-        <div className="flex justify-between items-center mb-6">
-        {icons.map((item, idx) => {
-          const isActive = idx === 0;
-          return (
-            <div key={item.name} className="flex flex-col items-center flex-1">
-              <div
-                className={`text-2xl rounded-full border-2 w-8 h-8 flex items-center justify-center ${
-                  isActive ? "border-blue-500 bg-blue-100 text-blue-600" : "border-gray-300 text-gray-400"
-                }`}
-              >
-                {item.icon}
+        <div className="flex flex-wrap justify-between items-center mb-6 gap-y-3">
+          {icons.map((item, idx) => {
+            const isActive = idx === 0;
+            return (
+              <div key={item.name} className="flex flex-col items-center flex-1">
+                <div
+                  className={`text-2xl rounded-full border-2 w-8 h-8 flex items-center justify-center ${
+                    isActive
+                      ? "border-blue-500 bg-blue-100 text-blue-600"
+                      : "border-gray-300 text-gray-400"
+                  }`}
+                >
+                  {item.icon}
+                </div>
               </div>
-            </div>
-          );
-        })}
-      </div>
+            );
+          })}
+        </div>
 
         {/* Question */}
-        <div className="mb-1 text-lg font-semibold">
+        <div className="mb-1 text-base sm:text-lg font-semibold">
           First, the basics: what motivates you to want to improve your drinking habits?
         </div>
-        <div className="mb-6 text-sm text-gray-600">Choose all that apply:</div>
+        <div className="mb-6 text-sm sm:text-base text-gray-600">
+          Choose all that apply:
+        </div>
 
         {/* Options Grid */}
-        
-        <div className="grid grid-cols-2 gap-4 mb-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
           {motivationOptions.map((option) => {
             const isSelected = selected.includes(option);
             return (
@@ -133,7 +137,7 @@ export default function GoalsPage1({ onBack, onNext, selected, setSelected }) {
             className={`p-3 rounded-full shadow text-white transition ${
               selected.length === 0 || loading
                 ? "bg-gray-300 cursor-not-allowed"
-                : "bg-blue-300 hover:bg-blue-700"
+                : "bg-blue-500 hover:bg-blue-700"
             }`}
           >
             {loading ? "..." : <ArrowRight />}
